@@ -1,0 +1,27 @@
+# Ignore environment variables
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+.env/
+env/
+.venv/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore FAISS index files (optional if large)
+data/vector_store/index.faiss
+data/vector_store/index.pkl
+
+# Ignore logs or temporary files
+*.log
+*.tmp
