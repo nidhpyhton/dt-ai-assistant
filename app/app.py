@@ -6,15 +6,17 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
+from pathlib import Path
+
 
 # ------------------ Load Environment ------------------
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # ------------------ Config ------------------
-
-
-VECTOR_STORE_DIR = r"C:\Users\Dell\PycharmProjects\DT-AI-Assistant\data\vector_store"  # adjust if needed
+ROOT_DIR = Path(__file__).resolve().parent.parent
+VECTOR_STORE_DIR = ROOT_DIR / "data" / "vector_store"
+# adjust if needed
 EMBED_MODEL = "text-embedding-3-small"
 LLM_MODEL = "gpt-4"
 SIMILARITY_THRESHOLD = 0.5
@@ -106,4 +108,3 @@ for idx, qa in enumerate(reversed(st.session_state.query_history), 1):
     with st.expander("📄 Pages used"):
         st.write(qa["pages"])
     st.markdown("---")
-
